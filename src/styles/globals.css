@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.box {
+    @apply px-5 mb:px-16 mb:w-[1440px] mb:mx-auto
+}
+.boxM {
+    @apply px-5 mb:w-[1088px]  mx-auto
+
+}
+.trans {
+    @apply transition-all ease-in-out;
+}
+svg {
+    transition: all 0.3s;
+}
+body {
+    overflow-x: hidden;
+}
+/*body {*/
+/*    overflow-x: hidden;*/
+/*}*/

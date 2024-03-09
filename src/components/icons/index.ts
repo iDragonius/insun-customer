@@ -1,0 +1,10 @@
+export { default as Logo } from "./logo.svg";
+export { default as CaretDownIcon } from "./caret-down.svg";
+export { default as GreenCircle } from "./green-circle.svg";
+export { default as RedCircle } from "./red-circle.svg";
+export { default as SearchIcon } from "./seacrh.svg";
+export { default as BurgerMenu } from "./menu-burger.svg";
+export { default as Cross } from "./cross.svg";
+export { default as SuccessIcon } from "./success.svg";
+export { default as PrevArrowIcon } from "./prev-arrow.svg";
+export { default as BackArrow } from "./back-arrow.svg";

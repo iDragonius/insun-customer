@@ -1,0 +1,11 @@
+export const imageLoader = ({
+	src,
+	width,
+	quality,
+}: {
+	src: string
+	width: number
+	quality?: number
+}) => {
+	return `https://admin.insun.az${src}?w=${width}&q=${quality || 75}`
+}

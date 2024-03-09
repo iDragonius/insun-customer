@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  customer:
+    build:
+      context: ../app
+      dockerfile: ./Dockerfile
+    container_name: frontend.insun.az
+    restart: unless-stopped
+    networks:
+      - insun-network
+    ports:
+      - 3000:3000
+networks:
+  insun-network:
+    external: true
