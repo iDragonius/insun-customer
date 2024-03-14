@@ -26,6 +26,7 @@ const GET_LAYOUT = gql`
       data {
         id
         attributes {
+          whatsapp
           links {
             id
             name

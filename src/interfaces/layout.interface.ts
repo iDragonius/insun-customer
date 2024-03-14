@@ -34,6 +34,7 @@ export interface SocialLinkProps {
     id: string;
     attributes: {
       links: SocialLinkElementProps[];
+      whatsapp: string;
     };
   };
 }

@@ -3,6 +3,7 @@ import headsImage from "@/assets/heads-image.jpg";
 import Image from "next/image";
 import { ImageProps } from "@/interfaces/shared.interface";
 import { ServerUrl } from "@/constants/server-url";
+import { imageLoader } from "@/utils/loader";
 export interface HeroProps {
   data: {
     image: ImageProps;
@@ -36,7 +37,8 @@ const Hero: FC<HeroProps> = ({ data }) => {
           </p>
         </div>
         <Image
-          src={ServerUrl + data.image.data.attributes.url}
+          loader={imageLoader}
+          src={data.image.data.attributes.url}
           alt={"image"}
           className={"object-cover h-[500px]"}
           width={600}

@@ -1,1 +1,1 @@
-export const ServerUrl = 'https://cpanel.insun.az'
+export const ServerUrl = "https://admin.insun.az";
