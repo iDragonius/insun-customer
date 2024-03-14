@@ -25,7 +25,7 @@ const Partners: FC<PartnersProps> = ({ data }) => {
             "  text-28 sm:text-32 min-[900px]:text-[36px] mb:text-[44px] font-bold mb-2"
           }
         >
-          {t("home_partners")}
+          Tərəfdaşlar
         </h3>
         <p className={"text-20 mb-6"}>
           Burada adlarını gördüyünüz şirkətlərin dəyəri insan kapitalına verilən
@@ -57,8 +57,8 @@ const Partners: FC<PartnersProps> = ({ data }) => {
         >
           {data.map((img, i) => (
             <SwiperSlide key={img.id}>
-          <Image
-		loader={imageLoader}
+              <Image
+                loader={imageLoader}
                 src={img.attributes.logo.data.attributes.url}
                 alt={"img"}
                 width={img.attributes.logo.data.attributes.width}

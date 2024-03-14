@@ -1,4 +1,4 @@
-import { ImageProps } from "@/interfaces/shared.interface";
+import { ImageProps, YoutubeLinkProps } from "@/interfaces/shared.interface";
 
 export interface NewsPreviewItem {
   id: string;
@@ -7,6 +7,8 @@ export interface NewsPreviewItem {
     description: string;
     title: string;
     thumbnail: ImageProps;
+    youtubeLinks: YoutubeLinkProps[];
+
     category: string;
   };
 }

@@ -30,33 +30,17 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <div className={"min-h-[calc(100vh-100px)]"}>
         <Header data={data?.navigation as NavigationProps} loading={loading} />
         {children}
-        <Link
-          href={`https://wa.me/${data?.socialLink.data.attributes.whatsapp}`}
-          target={"_blank"}
-          className={"fixed right-5 bottom-20 z-[500] drop-shadow-xl"}
-        >
-          <Image src={wp} alt={"wp"} width={64} height={64} />
-        </Link>
-        <div
-          className={"flex items-center gap-2 fixed right-5 bottom-5 z-[500] "}
-        >
-          {data?.socialLink.data.attributes.links.map((social) => (
-            <Link
-              key={social.id}
-              href={social.link}
-              className={
-                "sm:h-11 sm:w-11 w-8 h-8 bg-white flex items-center justify-center rounded-full drop-shadow-2xl cursor-pointer"
-              }
-            >
-              <Image
-                loader={imageLoader}
-                src={social.logo.data.attributes.url}
-                alt={social.logo.data.attributes.name}
-                width={social.logo.data.attributes.width}
-                height={social.logo.data.attributes.height}
-              />
-            </Link>
-          ))}
+        <div className={"fixed right-5 bottom-5 z-[500]"}>
+          <Link
+            href={`https://wa.me/${data?.socialLink.data.attributes.whatsapp}`}
+            target={"_blank"}
+            className={
+              " drop-shadow-xl flex flex-col items-center gap-1 text-20 font-semibold"
+            }
+          >
+            <Image src={wp} alt={"wp"} width={50} height={50} />
+            <p className={"gradient-text"}>Bizə yazın</p>
+          </Link>
         </div>
       </div>
       <Footer data={data?.socialLink as SocialLinkProps} />

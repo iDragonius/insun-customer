@@ -9,3 +9,7 @@ export interface ImageProps {
     };
   };
 }
+
+export interface YoutubeLinkProps {
+  link: string;
+}

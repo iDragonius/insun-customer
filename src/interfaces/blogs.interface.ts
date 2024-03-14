@@ -1,4 +1,4 @@
-import { ImageProps } from "@/interfaces/shared.interface";
+import { ImageProps, YoutubeLinkProps } from "@/interfaces/shared.interface";
 
 export interface BlogPreviewItem {
   id: string;
@@ -8,6 +8,7 @@ export interface BlogPreviewItem {
     title: string;
     category: string;
     thumbnail: ImageProps;
+    youtubeLinks: YoutubeLinkProps[];
   };
 }
 export interface BlogsResponse {

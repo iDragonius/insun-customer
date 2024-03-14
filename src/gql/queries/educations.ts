@@ -14,6 +14,9 @@ const GET_EDUCATIONS = gql`
           description
           date
           category
+          youtubeLinks {
+            link
+          }
           thumbnail {
             data {
               id

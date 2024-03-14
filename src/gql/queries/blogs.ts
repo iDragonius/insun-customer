@@ -14,6 +14,9 @@ const GET_BLOGS = gql`
           description
           date
           category
+          youtubeLinks {
+            link
+          }
           thumbnail {
             data {
               id

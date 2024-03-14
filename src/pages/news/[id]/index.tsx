@@ -11,7 +11,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC } from "react";
+import React, { FC } from "react";
 import ReactMarkdown from "react-markdown";
 import { imageLoader } from "@/utils/loader";
 
@@ -78,6 +78,17 @@ const NewsItemPage: FC<NewsItemPageProps> = () => {
               <ReactMarkdown components={MdxComponents}>
                 {data?.news.data.attributes.content || ""}
               </ReactMarkdown>
+              <div className={"flex flex-col gap-4"}>
+                {data?.news.data.attributes.youtubeLinks.map((link, i) => (
+                  <iframe
+                    className={"w-full h-[400px]"}
+                    src={link.link}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                ))}
+              </div>
             </div>
             <div
               className={

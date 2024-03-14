@@ -1,5 +1,5 @@
 import { NewsPreviewItem } from "@/interfaces/news.interface";
-import { ImageProps } from "@/interfaces/shared.interface";
+import { ImageProps, YoutubeLinkProps } from "@/interfaces/shared.interface";
 export interface ImageAssets {
   id: string;
   attributes: {
@@ -19,6 +19,7 @@ export interface NewsItemResponse {
       attributes: {
         date: string;
         thumbnail: ImageProps;
+        youtubeLinks: YoutubeLinkProps[];
         assets: {
           data: ImageAssets[];
         };

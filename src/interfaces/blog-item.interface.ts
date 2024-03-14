@@ -1,5 +1,5 @@
 import { NewsPreviewItem } from "@/interfaces/news.interface";
-import { ImageProps } from "@/interfaces/shared.interface";
+import { ImageProps, YoutubeLinkProps } from "@/interfaces/shared.interface";
 export interface ImageAssets {
   id: string;
   attributes: {
@@ -22,6 +22,7 @@ export interface BlogItemResponse {
         assets: {
           data: ImageAssets[];
         };
+        youtubeLinks: YoutubeLinkProps[];
         content: string;
         title: string;
       };

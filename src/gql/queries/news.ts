@@ -14,6 +14,9 @@ const GET_NEWS = gql`
           description
           date
           category
+          youtubeLinks {
+            link
+          }
           thumbnail {
             data {
               id

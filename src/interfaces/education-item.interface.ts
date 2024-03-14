@@ -1,4 +1,4 @@
-import { ImageProps } from "@/interfaces/shared.interface";
+import { ImageProps, YoutubeLinkProps } from "@/interfaces/shared.interface";
 import { EducationPreviewItem } from "@/interfaces/educations.interface";
 export interface ImageAssets {
   id: string;
@@ -22,6 +22,7 @@ export interface EducationItemResponse {
         assets: {
           data: ImageAssets[];
         };
+        youtubeLinks: YoutubeLinkProps[];
         content: string;
         title: string;
       };

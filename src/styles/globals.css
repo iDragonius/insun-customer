@@ -21,3 +21,38 @@ body {
 /*body {*/
 /*    overflow-x: hidden;*/
 /*}*/
+
+.gradient-text {
+    --bg-size: 400%;
+    --color-one: #67A039;
+    --color-two: #A1D683;
+    --color-three:#67A039;
+    background: linear-gradient(
+            90deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-three)
+    ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    -webkit-background-clip: text ;
+    background-clip: text;
+    animation: move-bg 8s infinite linear;
+}
+@keyframes move-bg {
+    to {
+        background-position: var(--bg-size) 0;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .gradient-text {
+        animation: move-bg 8s linear infinite;
+    }
+
+    @keyframes move-bg {
+        to {
+            background-position: var(--bg-size) 0;
+        }
+    }
+
+}
+

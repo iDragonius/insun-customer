@@ -18,6 +18,7 @@ import { EducationPreviewItem } from "@/interfaces/educations.interface";
 import { useDebounce, useOnClickOutside } from "usehooks-ts";
 import { Dropdown } from "rsuite";
 import item from "@/components/screens/our-services/sections/item";
+import dayjs from "dayjs";
 
 export interface TestsPageProps {}
 
@@ -130,39 +131,31 @@ const TestsPage: FC<TestsPageProps> = () => {
             />
           </div>
         </div>
-        <div className={"flex flex-col gap-5 mb-20"}>
+        <div
+          className={
+            "grid  grid-cols-1 sm:grid-cols-2 min-[1000px]:grid-cols-3 gap-8 mb-16 mt-10"
+          }
+        >
           {items.map((category) => (
             <Link
               href={`/tests/${
                 slugify(category.attributes.name) + "-" + category.id
               }`}
-              className={
-                "w-full flex border p-4 rounded-[12px] gap-4 group trans hover:border-primary "
-              }
             >
               <Image
-                src={category.attributes.image.data.attributes.url}
-                alt={category.attributes.name}
                 loader={imageLoader}
-                width={400}
-                height={400}
-                className={
-                  "w-[100px] h-[100px] sm:w-[200px] sm:h-[200px] object-contain  rounded-[6px]"
-                }
+                src={category.attributes.image.data.attributes.url}
+                alt={category.attributes.image.data.attributes.name}
+                width={416}
+                height={300}
+                className={"mb-4 w-full"}
               />
-              <div className={"group-hover:!text-primary"}>
-                <p className={"text-18 sm:text-24 font-semibold "}>
-                  {" "}
-                  {category.attributes.name}
-                </p>
-                <p
-                  className={
-                    "font-medium text-gray-600  mt-3 leading-5 text-14 sm:text-18 group-hover:!text-primary"
-                  }
-                >
-                  {category.attributes.description}
-                </p>
-              </div>
+
+              <h3
+                className={"line-clamp-2 font-bold text-24 text-bodyText  te  "}
+              >
+                {category.attributes.name}
+              </h3>
             </Link>
           ))}
         </div>

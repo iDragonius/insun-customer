@@ -85,6 +85,17 @@ const BlogPage: FC<BlogPageProps> = () => {
               <ReactMarkdown components={MdxComponents}>
                 {data?.blog.data.attributes.content || ""}
               </ReactMarkdown>
+              <div className={"flex flex-col gap-4"}>
+                {data?.blog.data.attributes.youtubeLinks.map((link, i) => (
+                  <iframe
+                    className={"w-full h-[400px]"}
+                    src={link.link}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                ))}
+              </div>
             </div>
             <div
               className={

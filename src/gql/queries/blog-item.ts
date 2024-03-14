@@ -18,6 +18,9 @@ const GET_BLOG_ITEM = gql`
               }
             }
           }
+          youtubeLinks {
+            link
+          }
           assets {
             data {
               id
