@@ -12,6 +12,7 @@ export type TestCategoryProps = {
     name: string;
     description: string;
     image: ImageProps;
+    category: string;
     tests: {
       data: TestCategoryTestProps[];
     };

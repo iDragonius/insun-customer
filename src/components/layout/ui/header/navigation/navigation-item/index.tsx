@@ -66,6 +66,19 @@ const NavigationItem: FC<NavigationItemProps> = ({ data }) => {
                   );
                 }
               })}
+              {data.path === "/about-us" && (
+                <Link
+                  href={"/news"}
+                  className={clsx(
+                    pathname.includes("/news")
+                      ? "text-primary font-bold"
+                      : "font-medium",
+                    "text-navText min-w-max trans hover:text-primary",
+                  )}
+                >
+                  Xəbərlər
+                </Link>
+              )}
             </div>
           )}
         </div>

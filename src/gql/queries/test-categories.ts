@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 const GET_TEST_CATEGORIES = gql`
   query ($locale: I18NLocaleCode!) {
-    testCategories(locale: $locale) {
+    testCategories(locale: $locale, pagination: { page: 1, pageSize: 10000 }) {
       data {
         id
         attributes {
@@ -15,6 +15,7 @@ const GET_TEST_CATEGORIES = gql`
             }
           }
           name
+          category
           description
           image {
             data {

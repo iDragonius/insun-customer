@@ -69,7 +69,11 @@ const BlogsPage: FC<BlogsPageProps> = () => {
         <title>Bloqlar</title>
       </Head>
       <main className={"box"}>
-        <div className={"flex justify-between items-center gap-2 mt-16  mb-10"}>
+        <div
+          className={
+            "flex justify-between items-center gap-2 mt-16  mb-10 max-[900px]:flex-col"
+          }
+        >
           <h3 className={" text-[#424242] text-[44px] font-bold"}>Bloqlar</h3>
           <div className={"flex justify-between gap-4"}>
             <div ref={categoryFilterRef} className={"relative"}>
