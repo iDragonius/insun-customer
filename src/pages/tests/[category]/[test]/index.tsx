@@ -1,7 +1,7 @@
 import React, { Dispatch, FC, SetStateAction, useRef, useState } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import Loader from "@/components/ui/shared/Loader";
 import { GET_TEST } from "@/gql/queries/test";
 import {
@@ -14,6 +14,7 @@ import { createDefaultMaskGenerator, MaskedInput } from "react-hook-mask";
 import { Cross } from "@/components/icons";
 import ApplicationModal from "@/components/ui/shared/ApplicationModal";
 import clsx from "clsx";
+import TestResultMutation from "@/gql/mutations/test-result.mutation";
 const maskGenerator = createDefaultMaskGenerator("99 999 99 99");
 
 export interface TestPageProps {}
@@ -45,6 +46,8 @@ const TestPage: FC<TestPageProps> = () => {
   >({});
   const popupRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(popupRef, () => setPhoneNumberPopupOpen(false));
+  const [mutateFunction] = useMutation(TestResultMutation);
+
   if (loading) {
     return <Loader />;
   }
@@ -93,15 +96,28 @@ const TestPage: FC<TestPageProps> = () => {
                   score: 0,
                   feedback: "",
                 };
+
+                let result = "";
                 Object.entries(selectedAnswers).map(
                   ([questionId, answerData]) => {
                     temp.score += answerData.score;
+                    result += `${data?.test.data.attributes.questions.find(
+                      (el) => el.id === questionId,
+                    )?.text}:${answerData.text}   \n`;
                   },
                 );
                 temp.feedback =
                   data?.test.data.attributes.results.find(
                     (el) => el.max >= temp.score && temp.score >= el.min,
                   )?.result || "";
+                mutateFunction({
+                  variables: {
+                    phoneNumber,
+                    result,
+                    score: temp.score,
+                    feedback: temp.feedback,
+                  },
+                });
                 setResult(temp);
               }}
               disabled={phoneNumber.length !== 9}
