@@ -30,6 +30,18 @@ export interface SpecialistItemProps {
     tags: TagItemProps[];
   };
 }
+export interface SocialSeoProps {
+  title: string;
+  description: string;
+  image: ImageProps;
+  socialNetwork: string;
+}
+export interface SeoProps {
+  metaTitle: string;
+  metaDescription: string;
+  metaImage: ImageProps;
+  metaSocial: SocialSeoProps[];
+}
 export interface HomeResponse {
   partners: {
     data: PartnerItemProps[];
@@ -42,6 +54,7 @@ export interface HomeResponse {
       id: string;
       attributes: {
         services: ServiceItemProps[];
+        seo: SeoProps;
       };
     };
   };

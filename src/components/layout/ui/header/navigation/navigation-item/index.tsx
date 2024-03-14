@@ -25,7 +25,7 @@ const NavigationItem: FC<NavigationItemProps> = ({ data }) => {
               pathname.includes(data.path)
                 ? "text-primary font-bold"
                 : "font-medium",
-              "flex gap-2 text-navText items-center trans hover:text-primary cursor-pointer h-full",
+              "flex gap-1 text-navText items-center trans hover:text-primary cursor-pointer h-full",
               isShown && "text-primary",
             )}
           >

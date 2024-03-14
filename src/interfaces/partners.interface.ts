@@ -10,6 +10,7 @@ export interface PartnerPreviewItem {
   id: string;
   attributes: {
     name: string;
+    category: string;
     description: string;
     logo: ImageProps;
     link: string;

@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 const GET_PARTNERS = gql`
   query {
-    partners {
+    partners(pagination: { page: 1, pageSize: 10000 }) {
       data {
         id
         attributes {
@@ -18,6 +18,7 @@ const GET_PARTNERS = gql`
               }
             }
           }
+          category
           description
           link
           links {

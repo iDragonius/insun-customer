@@ -71,6 +71,17 @@ const BlogPage: FC<BlogPageProps> = () => {
               {data?.blog.data.attributes.title}
             </h3>
             <div className={"p-6 border  border-[#DADADA] mt-4 rounded-[8px] "}>
+              <Image
+                loader={imageLoader}
+                src={
+                  data?.blog.data.attributes.thumbnail.data.attributes
+                    .url as string
+                }
+                alt={data?.blog.data.attributes.title || ""}
+                width={300}
+                height={300}
+                className={"float-left mr-6 mb-4 object-contain rounded-[6px]"}
+              />
               <ReactMarkdown components={MdxComponents}>
                 {data?.blog.data.attributes.content || ""}
               </ReactMarkdown>

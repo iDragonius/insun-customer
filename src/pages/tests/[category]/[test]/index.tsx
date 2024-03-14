@@ -13,6 +13,7 @@ import { useOnClickOutside, useScreen } from "usehooks-ts";
 import { createDefaultMaskGenerator, MaskedInput } from "react-hook-mask";
 import { Cross } from "@/components/icons";
 import ApplicationModal from "@/components/ui/shared/ApplicationModal";
+import clsx from "clsx";
 const maskGenerator = createDefaultMaskGenerator("99 999 99 99");
 
 export interface TestPageProps {}
@@ -85,6 +86,7 @@ const TestPage: FC<TestPageProps> = () => {
             />
             <button
               onClick={() => {
+                if (phoneNumber.length !== 9) return;
                 setResultShow(true);
                 setPhoneNumberPopupOpen(false);
                 const temp: { score: number; feedback: string } = {
@@ -102,9 +104,11 @@ const TestPage: FC<TestPageProps> = () => {
                   )?.result || "";
                 setResult(temp);
               }}
-              className={
-                "w-full bg-primary text-white py-2.5 mt-3 rounded-[6px] px-4 trans hover:bg-primary-hover"
-              }
+              disabled={phoneNumber.length !== 9}
+              className={clsx(
+                "w-full bg-primary text-white py-2.5 mt-3 rounded-[6px] px-4 trans hover:bg-primary-hover",
+                phoneNumber.length !== 9 && "!bg-gray-300",
+              )}
             >
               Göndər
             </button>

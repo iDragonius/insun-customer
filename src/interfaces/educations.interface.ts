@@ -6,6 +6,7 @@ export interface EducationPreviewItem {
     date: string;
     description: string;
     title: string;
+    category: string;
     thumbnail: ImageProps;
   };
 }

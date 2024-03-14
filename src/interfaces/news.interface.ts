@@ -7,6 +7,7 @@ export interface NewsPreviewItem {
     description: string;
     title: string;
     thumbnail: ImageProps;
+    category: string;
   };
 }
 export interface NewsResponse {

@@ -76,6 +76,37 @@ const GET_HOME_PAGE = gql`
       data {
         id
         attributes {
+          seo {
+            metaDescription
+            metaTitle
+            metaImage {
+              data {
+                id
+                attributes {
+                  width
+                  height
+                  name
+                  url
+                }
+              }
+            }
+            metaSocial {
+              description
+              title
+              image {
+                data {
+                  id
+                  attributes {
+                    url
+                    name
+                    height
+                    width
+                  }
+                }
+              }
+              socialNetwork
+            }
+          }
           services {
             id
             color
