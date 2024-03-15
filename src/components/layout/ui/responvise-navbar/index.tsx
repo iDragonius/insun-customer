@@ -145,6 +145,16 @@ const ResponsiveNavbarItem = ({
                 );
               }
             })}
+            {data.path === "/about-us" && (
+              <Link
+                href={"/news"}
+                className={
+                  "py-3 text-navText hover:text-primary  font-medium hover:font-semibold"
+                }
+              >
+                Xəbərlər
+              </Link>
+            )}
           </div>
         )}
       </div>

@@ -141,7 +141,7 @@ const TestPage: FC<TestPageProps> = () => {
       </Head>
       {isResultShow ? (
         <main className={"box mb-20"}>
-          <div className={"w-[600px] mx-auto mt-10"}>
+          <div className={"min-[800px]:w-[600px] mx-auto mt-10"}>
             <h1 className={"text-32 font-medium mb-6"}>
               Sizin nəticəniz:{" "}
               <span className={"text-primary font-semibold "}>
@@ -168,6 +168,7 @@ const TestPage: FC<TestPageProps> = () => {
             {data?.test.data.attributes.questions.map((question) => (
               <Question
                 data={question}
+                error={errors[question.id] || null}
                 key={question.id}
                 selectedAnswers={selectedAnswers}
                 setSelectedAnswers={setSelectedAnswers}
@@ -177,8 +178,16 @@ const TestPage: FC<TestPageProps> = () => {
           <button
             onClick={() => {
               const errorsTemp: Record<string, string> = {};
-              // Object.entries(selectedAnswers).map(([questionId,answerData]))
-              setPhoneNumberPopupOpen((prevState) => !prevState);
+              data?.test.data.attributes.questions.map((question) => {
+                if (
+                  !Object.keys(selectedAnswers).find((id) => id === question.id)
+                ) {
+                  errorsTemp[question.id] = "Cavabı qeyd edin!";
+                }
+              });
+              setErrors(errorsTemp);
+              if (Object.keys(errorsTemp).length === 0)
+                setPhoneNumberPopupOpen((prevState) => !prevState);
             }}
             className={
               "px-4 py-3 rounded-[6px] bg-primary text-white hover:bg-primary-hover trans w-[250px] text-18 font-semibold"
@@ -196,14 +205,19 @@ const Question = ({
   data,
   setSelectedAnswers,
   selectedAnswers,
+  error,
 }: {
   data: QuestionProps;
   selectedAnswers: Record<string, AnswerProps>;
   setSelectedAnswers: Dispatch<SetStateAction<Record<string, AnswerProps>>>;
+  error: string | null;
 }) => {
   return (
     <div>
-      <p className={"text-20 font-medium mb-3"}>{data.text}</p>
+      <p className={clsx("text-20 font-medium ", !error && "mb-3")}>
+        {data.text}
+      </p>
+      {error && <p className={"text-red-600 my-1 font-medium"}>{error}</p>}
       <div className={"flex flex-col gap-3"}>
         {data.answers.map((answer) => (
           <Answer
