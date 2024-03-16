@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 const GET_PARTNERS = gql`
   query {
-    partners(pagination: { page: 1, pageSize: 10000 }) {
+    partners(pagination: { page: 1, pageSize: 10000 }, sort: "position:asc") {
       data {
         id
         attributes {

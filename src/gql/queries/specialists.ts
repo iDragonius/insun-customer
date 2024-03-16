@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 const GET_SPECIALISTS = gql`
   query ($locale: I18NLocaleCode!) {
-    specialists(locale: $locale) {
+    specialists(locale: $locale, sort: "position:asc") {
       data {
         id
         attributes {

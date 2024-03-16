@@ -93,6 +93,26 @@ const PartnerPage: FC<PartnerPageProps> = () => {
               <ReactMarkdown components={MdxComponents}>
                 {data?.partner.data.attributes.description || ""}
               </ReactMarkdown>
+
+              <div className={"flex gap-3"}>
+                {data?.partner.data.attributes.links.map((link) => (
+                  <Link
+                    href={link.link}
+                    key={link.id}
+                    className={
+                      "bg-white  rounded-full flex items-center justify-center w-10 h-10 shadow-lg"
+                    }
+                  >
+                    <Image
+                      loader={imageLoader}
+                      src={link.logo.data.attributes.url}
+                      alt={link.name}
+                      width={32}
+                      height={32}
+                    />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
           <div>

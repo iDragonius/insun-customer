@@ -1,13 +1,7 @@
 import React, { FC, ReactNode } from "react";
-import {
-  Service1,
-  Service2,
-  Service3,
-  Service4,
-} from "@/components/icons/home";
 import ServiceItem from "@/components/screens/home/services/service-item";
 import { ServiceItemProps } from "@/interfaces/home.interface";
-import { Swiper, SwiperRef, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
