@@ -130,14 +130,17 @@ const BlogsPage: FC<BlogsPageProps> = () => {
             <Link
               href={`/blog/${slugify(blog.attributes.title) + "-" + blog.id}`}
             >
-              <Image
-                loader={imageLoader}
-                src={blog.attributes.thumbnail.data.attributes.url}
-                alt={blog.attributes.thumbnail.data.attributes.name}
-                width={416}
-                height={300}
-                className={"mb-6 w-full"}
-              />
+              {blog.attributes.thumbnail.data && (
+                <Image
+                  loader={imageLoader}
+                  src={blog.attributes.thumbnail.data.attributes.url}
+                  alt={blog.attributes.thumbnail.data.attributes.name}
+                  width={416}
+                  height={300}
+                  className={"mb-6 w-full"}
+                />
+              )}
+
               <p className={"text-[13px] text-[#A1A1A1] font-semibold mb-2"}>
                 {dayjs(blog.attributes.date).format("DD.MM.YYYY")}
               </p>
