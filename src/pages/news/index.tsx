@@ -141,14 +141,16 @@ const NewsPage: FC<NewsPageProps> = () => {
         >
           {items.map((newsItem) => (
             <Link href={`/news/${newsItem.id}`}>
-              <Image
-                loader={imageLoader}
-                src={newsItem.attributes.thumbnail.data.attributes.url}
-                alt={newsItem.attributes.thumbnail.data.attributes.name}
-                width={416}
-                height={300}
-                className={"mb-6 w-full"}
-              />
+              {newsItem.attributes.thumbnail.data && (
+                <Image
+                  loader={imageLoader}
+                  src={newsItem.attributes.thumbnail.data.attributes.url}
+                  alt={newsItem.attributes.thumbnail.data.attributes.name}
+                  width={416}
+                  height={300}
+                  className={"mb-6 w-full"}
+                />
+              )}
               <p className={"text-[13px] text-[#A1A1A1] font-semibold mb-2"}>
                 {dayjs(newsItem.attributes.date).format("DD.MM.YYYY")}
               </p>

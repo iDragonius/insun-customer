@@ -137,14 +137,16 @@ const PartnersPage: FC<PartnersPageProps> = () => {
               <div
                 className={"h-[280px] w-full border mb-3 p-2 rounded-[10px]"}
               >
-                <Image
-                  loader={imageLoader}
-                  src={partner.attributes.logo.data.attributes.url}
-                  alt={partner.attributes.logo.data.attributes.name}
-                  width={416}
-                  height={300}
-                  className={" h-full w-full object-contain"}
-                />
+                {partner.attributes.logo.data && (
+                  <Image
+                    loader={imageLoader}
+                    src={partner.attributes.logo.data.attributes.url}
+                    alt={partner.attributes.logo.data.attributes.name}
+                    width={416}
+                    height={300}
+                    className={" h-full w-full object-contain"}
+                  />
+                )}
               </div>
 
               <h3

@@ -141,14 +141,17 @@ const EducationPage: FC<EducationPageProps> = () => {
               }`}
               key={education.id}
             >
-              <Image
-                loader={imageLoader}
-                src={education.attributes.thumbnail.data.attributes.url}
-                alt={education.attributes.thumbnail.data.attributes.name}
-                width={416}
-                height={300}
-                className={"mb-6 w-full"}
-              />
+              {education.attributes.thumbnail.data && (
+                <Image
+                  loader={imageLoader}
+                  src={education.attributes.thumbnail.data.attributes.url}
+                  alt={education.attributes.thumbnail.data.attributes.name}
+                  width={416}
+                  height={300}
+                  className={"mb-6 w-full"}
+                />
+              )}
+
               <p className={"text-[13px] text-[#A1A1A1] font-semibold mb-2"}>
                 {dayjs(education.attributes.date).format("DD.MM.YYYY")}
               </p>

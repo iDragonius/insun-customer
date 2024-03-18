@@ -103,13 +103,15 @@ const PartnerPage: FC<PartnerPageProps> = () => {
                       "bg-white  rounded-full flex items-center justify-center w-10 h-10 shadow-lg"
                     }
                   >
-                    <Image
-                      loader={imageLoader}
-                      src={link.logo.data.attributes.url}
-                      alt={link.name}
-                      width={32}
-                      height={32}
-                    />
+                    {link.logo.data && (
+                      <Image
+                        loader={imageLoader}
+                        src={link.logo.data.attributes.url}
+                        alt={link.name}
+                        width={32}
+                        height={32}
+                      />
+                    )}
                   </Link>
                 ))}
               </div>
