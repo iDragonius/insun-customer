@@ -7,16 +7,16 @@ export const GET_TEST = gql`
         id
         attributes {
           name
-          questions {
+          questions(pagination: { page: 1, pageSize: 5000 }) {
             id
             text
-            answers {
+            answers(pagination: { page: 1, pageSize: 5000 }) {
               id
               text
               score
             }
           }
-          results {
+          results(pagination: { page: 1, pageSize: 5000 }) {
             id
             max
             min
