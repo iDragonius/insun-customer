@@ -112,7 +112,7 @@ const BlogPage: FC<BlogPageProps> = () => {
           </div>
           <div>
             <h2 className={"text-bodyText font-bold text-[36px] mb-6"}>
-              Digər təlimlər
+              Digər bloqlar
             </h2>
             <div
               className={

@@ -116,7 +116,7 @@ const EducationPage: FC<EducationPageProps> = () => {
           </div>
           <div>
             <h2 className={"text-bodyText font-bold text-[36px] mb-6"}>
-              Digər Bloqlar
+              Digər təlimlər
             </h2>
             <div
               className={
