@@ -11,6 +11,8 @@ import Image from "next/image";
 import { PartnerItemProps } from "@/interfaces/home.interface";
 import { ServerUrl } from "@/constants/server-url";
 import useTranslation from "next-translate/useTranslation";
+import Link from "next/link";
+import slugify from "slugify";
 export interface PartnersProps {
   data: PartnerItemProps[];
 }
@@ -56,14 +58,24 @@ const Partners: FC<PartnersProps> = ({ data }) => {
           }}
         >
           {data.map((img, i) => (
-            <SwiperSlide key={img.id}>
-              <Image
-                loader={imageLoader}
-                src={img.attributes.logo.data.attributes.url}
-                alt={"img"}
-                width={img.attributes.logo.data.attributes.width}
-                height={img.attributes.logo.data.attributes.height}
-              />
+            <SwiperSlide
+              key={img.id}
+              className={"!flex !items-center !justify-center  !h-[177px]"}
+            >
+              <Link
+                href={`/about-us/partners/${slugify(img.attributes.name)}-${
+                  img.id
+                }`}
+              >
+                <Image
+                  loader={imageLoader}
+                  src={img.attributes.logo.data.attributes.url}
+                  alt={"img"}
+                  width={350}
+                  height={200}
+                  className={"w-full h-full object-contain"}
+                />
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

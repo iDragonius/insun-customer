@@ -25,7 +25,7 @@ const OurServicesPage: FC<OurServicesPageProps> = () => {
   return (
     <>
       <Head>
-        <title>Xidmmətlərimiz</title>
+        <title>Xidmətlərimiz</title>
       </Head>
       <main>
         <Banner />
