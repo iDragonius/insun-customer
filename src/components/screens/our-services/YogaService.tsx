@@ -4,6 +4,7 @@ import Image from "next/image";
 import yogaImage from "@/assets/our-services/yoga.png";
 import { GreenCircle, RedCircle } from "@/components/icons";
 import AdditionalBlock from "@/components/screens/our-services/AdditionalBlock";
+import info from "@/assets/our-services/info/yoqa.jpg";
 
 export interface YogaServiceProps {
   sectionRef: React.MutableRefObject<HTMLDivElement>;
@@ -83,14 +84,20 @@ const YogaService: FC<YogaServiceProps> = ({ sectionRef }) => {
               }
             />
           </div>{" "}
-          <div className={"min-[900px]:w-[420px]"}>
+          <div className={"flex justify-between"}>
             <Block
               title={"Empati qurun"}
               description={
                 "Gördüyünüz və oxuduğunuz hər şeyə anında fikir bildirmək məcburiyyətində deyilsiniz. Bizim bütün problemlərimiz empati hissinin olmamasından qaynaqlanır. Özümüzə fokus ola bilmədiyimiz kimi özümü qarşı tərəfin yerinə də qoya da bilmirik. Yoqa ilə empati qurmağı öyrənin"
               }
             />
-          </div>{" "}
+            <Image
+              src={info}
+              alt={"info"}
+              width={400}
+              className={"object-contain"}
+            />
+          </div>
           <div className={"min-[900px]:w-[520px] self-end"}>
             <Block
               title={"Maraqlanmaq"}
@@ -115,6 +122,7 @@ const Block = ({
   function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
   }
+
   return (
     <div className={" py-10 px-8 relative"}>
       <h2 className={"text-bodyText font-bold text-24 leading-8 mb-4 "}>

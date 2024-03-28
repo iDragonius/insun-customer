@@ -5,6 +5,7 @@ import dietitianImage from "@/assets/our-services/dietolog.png";
 import clsx from "clsx";
 import { GreenCircle, RedCircle } from "@/components/icons";
 import AdditionalBlock from "@/components/screens/our-services/AdditionalBlock";
+import info from "@/assets/our-services/info/dietoloq.jpg";
 
 export interface DietitianServiceProps {
   sectionRef: React.MutableRefObject<HTMLDivElement>;
@@ -103,14 +104,20 @@ const DietitianService: FC<DietitianServiceProps> = ({ sectionRef }) => {
               }
             />
           </div>{" "}
-          <div className={"min-[900px]:w-[520px] min-[900px]:self-end"}>
+          <div className={"flex justify-between"}>
+            <Image
+              src={info}
+              alt={"info"}
+              width={400}
+              className={"object-contain"}
+            />
             <Block
               title={"Yanlış vərdişlər"}
               description={
                 "Əvvəl biz vərdişlərimizi yaradırıq. Sonra isə vərdişlərimiz bizi yaradır. Arıqlama ilə bağlı Sizə deyilənləri və oxuyub yarımçıq sınaqdan keçirdiklərinizi unudun. Bizim dietoloqlar Sizi həm yanlış miflərdən, həm də yanlış vərdişlərdən xilas edəcəklər. Bundan xilas olmağınız üçün Sizi sadəcə dinləməyimiz yetərlidir."
               }
             />
-          </div>{" "}
+          </div>
           <div className={"min-[900px]:w-[420px]"}>
             <Block
               title={"Psixoloji vəziyyət"}
@@ -143,6 +150,7 @@ const Block = ({
   function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
   }
+
   return (
     <div className={" py-10 px-8 relative"}>
       <h2 className={"text-bodyText font-bold text-24 leading-8 mb-4 "}>

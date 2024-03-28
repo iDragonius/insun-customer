@@ -4,6 +4,7 @@ import Image from "next/image";
 import accessBarImage from "@/assets/our-services/access-bar.png";
 import { GreenCircle, RedCircle } from "@/components/icons";
 import AdditionalBlock from "@/components/screens/our-services/AdditionalBlock";
+import info from "@/assets/our-services/info/access-bar.jpg";
 
 export interface AccessBarProps {
   sectionRef: React.MutableRefObject<HTMLDivElement>;
@@ -47,14 +48,20 @@ const AccessBar: FC<AccessBarProps> = ({ sectionRef }) => {
               }
             />
           </div>{" "}
-          <div className={"min-[900px]:w-[520px] min-[900px]:self-end"}>
+          <div className={"flex justify-between"}>
             <Block
               title={"Bu bir utopiya deyil, həqiqətdir"}
               description={
                 "Bu metod Sizə utopiya kimi gəlirsə, bir neçə seansdan sonra fikrinizi dəyişməyə də hazır olun. Niyə belə əminliklə deyirik? İnsun Yaşam Mərkəzi markası üzərində çalışarkən hər xidmət növünün effektivliyini dəyərləndirmək üçün 3 fərqli peşələrdə çalışan insanlardan ibarət fokus qrup yaratmışdıq. Sadə vətəndaşlardan ibarət olan fokus qrupun seans sonrası aşağıdakı təəssüratlarını Sizinlə paylaşırıq:"
               }
             />
-          </div>{" "}
+            <Image
+              src={info}
+              alt={"info"}
+              width={400}
+              className={"object-contain"}
+            />
+          </div>
           <div className={"min-[900px]:w-[720px] mx-auto"}>
             <Block
               title={"Stress – Taksi sürücüsü \n" + "(32 yaş)"}
@@ -88,6 +95,7 @@ const Block = ({
   function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
   }
+
   return (
     <div className={" py-10 px-8 relative"}>
       <h2 className={"text-bodyText font-bold text-24 leading-8 mb-4 "}>

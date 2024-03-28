@@ -5,6 +5,7 @@ import thetaImage from "@/assets/our-services/theta.png";
 import AdditionalBlock from "@/components/screens/our-services/AdditionalBlock";
 import { GreenCircle, RedCircle } from "@/components/icons";
 import clsx from "clsx";
+import info from "@/assets/our-services/info/teta.jpg";
 
 export interface ThetaHealingProps {
   sectionRef: React.MutableRefObject<HTMLDivElement>;
@@ -54,14 +55,23 @@ const ThetaHealing: FC<ThetaHealingProps> = ({ sectionRef }) => {
             }
             space={0}
           />
-          <Block
-            title={"Kouçinq üzrə mütəxəssisin fikirləri:"}
-            description={
-              "" +
-              "İnsan beyni şüurlu düşüncə və şüuraltı düşüncə formasında fəaliyyət göstərir. Şüurlu düşüncə insanın ayıq halda düşünərək verdiyi qərarlar və atdığı addımlardır. Şüuraltı düşüncədə isə hadisələr insanın özünün fərqində olmadığı halda baş verir. İnsan şüuraltı düşüncədən doğan mənfi və müsbət qərarları idarə edə bilməsə də, hər zaman pozitiv düşünməklə ona təsir göstərə bilir. Proseslərdən sonra belə bir qənaətə gəlmək olar ki, theta healing özünə inamın ruh halının gücləndirilməsi prosesidir. Ruh halı yüksək olmayan insanlar vermək ilə özünə həll yolu tapmasını gözləmək məntiqsizdir. Bu sönmüş bir telefon ilə başqa birisinə zəng etməyə çalışmağa bənzəyir."
-            }
-            space={112}
-          />
+          <div className={"flex justify-between"}>
+            <Block
+              title={"Kouçinq üzrə mütəxəssisin fikirləri:"}
+              description={
+                "" +
+                "İnsan beyni şüurlu düşüncə və şüuraltı düşüncə formasında fəaliyyət göstərir. Şüurlu düşüncə insanın ayıq halda düşünərək verdiyi qərarlar və atdığı addımlardır. Şüuraltı düşüncədə isə hadisələr insanın özünün fərqində olmadığı halda baş verir. İnsan şüuraltı düşüncədən doğan mənfi və müsbət qərarları idarə edə bilməsə də, hər zaman pozitiv düşünməklə ona təsir göstərə bilir. Proseslərdən sonra belə bir qənaətə gəlmək olar ki, theta healing özünə inamın ruh halının gücləndirilməsi prosesidir. Ruh halı yüksək olmayan insanlar vermək ilə özünə həll yolu tapmasını gözləmək məntiqsizdir. Bu sönmüş bir telefon ilə başqa birisinə zəng etməyə çalışmağa bənzəyir."
+              }
+              space={112}
+            />
+            <Image
+              src={info}
+              alt={"info"}
+              width={400}
+              className={"object-contain"}
+            />
+          </div>
+
           <Block
             title={"Dietoloqun fikirləri:"}
             description={
@@ -86,6 +96,7 @@ const Block = ({
   function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
   }
+
   return (
     <div
       className={clsx(

@@ -5,6 +5,7 @@ import thetaImage from "@/assets/our-services/theta.png";
 import clsx from "clsx";
 import AdditionalBlock from "@/components/screens/our-services/AdditionalBlock";
 import { GreenCircle, RedCircle } from "@/components/icons";
+import info from "@/assets/our-services/info/qrup-terapiya.jpg";
 
 export interface GroupTherapiesProps {
   sectionRef: React.MutableRefObject<HTMLDivElement>;
@@ -85,12 +86,18 @@ const GroupTherapies: FC<GroupTherapiesProps> = ({ sectionRef }) => {
               }
             />
           </div>
-          <div className={"min-[900px]:w-[400px] self-end"}>
+          <div className={"flex justify-between"}>
             <Block
               title={"Humanist yanaşma ilə \n" + "qrup terapiyası:"}
               description={
                 "Bu qrupda psixoterapevt bəzən qrupa rəhbərlik edir, bəzən də qrup dinamikasının kor təbii dəyişməsinə imkan yaradır. Humanist yanaşma ilə qrup terapiyasında məqsəd həm məlumatlılıq əldə etmək, həm də dəyişməkdir."
               }
+            />
+            <Image
+              src={info}
+              alt={"info"}
+              width={400}
+              className={"object-contain"}
             />
           </div>
           <div>
@@ -134,6 +141,7 @@ const Block = ({
   function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
   }
+
   return (
     <div className={" py-10 px-8 relative"}>
       <h2 className={"text-bodyText font-bold text-24 leading-8 mb-4 "}>

@@ -4,7 +4,7 @@ import MainBlock from "@/components/screens/our-services/MainBlock";
 import Image from "next/image";
 import clsx from "clsx";
 import AdditionalBlock from "@/components/screens/our-services/AdditionalBlock";
-import { GreenCircle, RedCircle } from "@/components/icons";
+import info from "@/assets/our-services/info/koucinq.jpg";
 export interface CoachingServiceProps {
   sectionRef: React.MutableRefObject<HTMLDivElement>;
 }
@@ -80,7 +80,13 @@ const CoachingService: FC<CoachingServiceProps> = ({ sectionRef }) => {
               }
             />
           </div>{" "}
-          <div className={"min-[900px]:w-[520px] min-[900px]:self-end"}>
+          <div className={"flex justify-between"}>
+            <Image
+              src={info}
+              alt={"info"}
+              width={400}
+              className={"object-contain"}
+            />
             <Block
               title={
                 "Kouçinqdə suallar, \n" + "mentorluqda isə hazır cavablar var"
@@ -89,7 +95,8 @@ const CoachingService: FC<CoachingServiceProps> = ({ sectionRef }) => {
                 "Kouçinq duyğularımız, düşüncələrimiz, davranış və vərdişlərimizlə bağlıdır. Biz daha çox suallar verir, düşünməyə təşviq edir, beyninizi provokasiya etməklə özünüz həll yolları taparaq nəticəyə çatmağınıza təkan veririk."
               }
             />
-          </div>{" "}
+          </div>
+          <div className={"min-[900px]:w-[520px] min-[900px]:self-end"}></div>{" "}
           <div className={"min-[900px]:w-[420px]"}>
             <Block
               title={"Biz İQ deyil, \n" + "EQ-nu inkişaf etdirin"}
