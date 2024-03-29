@@ -80,12 +80,16 @@ const CoachingService: FC<CoachingServiceProps> = ({ sectionRef }) => {
               }
             />
           </div>{" "}
-          <div className={"flex justify-between"}>
+          <div
+            className={
+              "flex justify-between  max-[800px]:flex-col max-[800px]:gap-4"
+            }
+          >
             <Image
               src={info}
               alt={"info"}
               width={400}
-              className={"object-contain"}
+              className={"object-contain max-[800px]:mx-auto"}
             />
             <Block
               title={

@@ -55,7 +55,11 @@ const ThetaHealing: FC<ThetaHealingProps> = ({ sectionRef }) => {
             }
             space={0}
           />
-          <div className={"flex justify-between"}>
+          <div
+            className={
+              "flex justify-between  max-[800px]:flex-col max-[800px]:gap-4"
+            }
+          >
             <Block
               title={"Kouçinq üzrə mütəxəssisin fikirləri:"}
               description={
@@ -68,7 +72,7 @@ const ThetaHealing: FC<ThetaHealingProps> = ({ sectionRef }) => {
               src={info}
               alt={"info"}
               width={400}
-              className={"object-contain"}
+              className={"object-contain max-[800px]:mx-auto"}
             />
           </div>
 

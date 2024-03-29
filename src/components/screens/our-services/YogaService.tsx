@@ -84,7 +84,11 @@ const YogaService: FC<YogaServiceProps> = ({ sectionRef }) => {
               }
             />
           </div>{" "}
-          <div className={"flex justify-between"}>
+          <div
+            className={
+              "flex justify-between  max-[800px]:flex-col max-[800px]:gap-4"
+            }
+          >
             <Block
               title={"Empati qurun"}
               description={
@@ -95,7 +99,7 @@ const YogaService: FC<YogaServiceProps> = ({ sectionRef }) => {
               src={info}
               alt={"info"}
               width={400}
-              className={"object-contain"}
+              className={"object-contain max-[800px]:mx-auto"}
             />
           </div>
           <div className={"min-[900px]:w-[520px] self-end"}>
