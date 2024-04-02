@@ -83,11 +83,9 @@ const EducationPage: FC<EducationPageProps> = () => {
                       .url as string
                   }
                   alt={data?.education.data.attributes.title || ""}
-                  width={300}
-                  height={300}
-                  className={
-                    "float-left mr-6 mb-4 object-contain rounded-[6px]"
-                  }
+                  width={600}
+                  height={600}
+                  className={"  mb-4 object-contain rounded-[6px] mx-auto"}
                 />
               )}
 
