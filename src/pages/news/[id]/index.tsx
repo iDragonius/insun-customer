@@ -83,11 +83,9 @@ const NewsItemPage: FC<NewsItemPageProps> = () => {
                       .url as string
                   }
                   alt={data?.news.data.attributes.title || ""}
-                  width={300}
-                  height={300}
-                  className={
-                    "float-left mr-6 mb-4 object-contain rounded-[6px]"
-                  }
+                  width={600}
+                  height={600}
+                  className={"  mb-4 object-contain rounded-[6px] mx-auto"}
                 />
               )}
               <ReactMarkdown components={MdxComponents}>
