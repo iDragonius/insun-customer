@@ -14,6 +14,13 @@ import { useRouter } from "next/router";
 import React, { FC } from "react";
 import ReactMarkdown from "react-markdown";
 import { imageLoader } from "@/utils/loader";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export interface NewsItemPageProps {
   // data: NewsItemResponse;
@@ -91,6 +98,29 @@ const NewsItemPage: FC<NewsItemPageProps> = () => {
               <ReactMarkdown components={MdxComponents}>
                 {data?.news.data.attributes.content || ""}
               </ReactMarkdown>
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                slidesPerView={1}
+                loop={true}
+                pagination={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+              >
+                {data?.news.data.attributes.assets.data.map((asset) => (
+                  <SwiperSlide key={asset.id} className={"max-h-[500px]"}>
+                    <Image
+                      loader={imageLoader}
+                      src={asset.attributes.url}
+                      alt={asset.attributes.name}
+                      width={500}
+                      height={500}
+                      className={"w-full"}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               <div className={"flex flex-col gap-4"}>
                 {data?.news.data.attributes.youtubeLinks.map((link, i) => (
                   <iframe
