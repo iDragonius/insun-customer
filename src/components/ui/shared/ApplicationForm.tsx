@@ -218,7 +218,7 @@ const ApplicationForm: FC<ApplicationFormProps> = ({
           <button
             onClick={createForm}
             className={
-              " py-4 w-full min-[700px]:w-[300px] bg-white text-primary rounded-[4px] trans hover:ring-4 hover:ring-white hover:ring-opacity-70"
+              " py-4 w-full min-[700px]:w-[500px] bg-white text-primary rounded-[4px] trans hover:ring-4 hover:ring-white hover:ring-opacity-70"
             }
           >
             {t("apply")}

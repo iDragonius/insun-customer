@@ -143,7 +143,7 @@ const ApplicationModal: FC<ApplicationModalProps> = ({ toggle }) => {
       >
         <div
           className={
-            "w-[300px] bg-white flex flex-col items-center justify-center rounded-[10px]"
+            "w-[600px] bg-white flex flex-col items-center justify-center rounded-[10px] "
           }
           ref={modalRef}
         >
