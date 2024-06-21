@@ -211,7 +211,7 @@ const Languages: FC<LanguagesProps> = () => {
         <div className={"absolute bg-white w-full border "}>
           {languages?.map((lc) => (
             <Link
-              href={"/"}
+              href={"/contact"}
               target={"_blank"}
               translate={"no"}
               className={clsx(
