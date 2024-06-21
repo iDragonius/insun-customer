@@ -152,7 +152,7 @@ const Languages: FC<LanguagesProps> = () => {
     //@ts-ignore
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "/auto/az",
+        pageLanguage: "az",
         autoDisplay: false,
         includedLanguages: "ru,en,az", // If you remove it, by default all google supported language will be included
         //@ts-ignore
@@ -171,7 +171,8 @@ const Languages: FC<LanguagesProps> = () => {
     }
     window.location.reload();
   };
-  console.log(getCookie("googtrans"));
+  // console.log(getCookie("googtrans") === "/auto/az");
+  console.log();
   return (
     <div
       className={"relative"}
@@ -188,9 +189,19 @@ const Languages: FC<LanguagesProps> = () => {
       >
         <div className={"flex gap-2 items-center"}>
           <div className={"mt-1"}>
-            {languages.find((el) => el.value === selected)?.icon}
+            {
+              languages.find((el) =>
+                el.value.includes(
+                  (getCookie("googtrans") || "").split("/az")[1],
+                ),
+              )?.icon
+            }
           </div>
-          {languages.find((el) => el.value === selected)?.label}
+          {
+            languages.find((el) =>
+              el.value.includes((getCookie("googtrans") || "").split("/az")[1]),
+            )?.label
+          }
         </div>
 
         <CaretDownIcon
