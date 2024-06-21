@@ -170,7 +170,7 @@ const Languages: FC<LanguagesProps> = () => {
       setCookie("googtrans", e);
       setSelected(e);
     }
-    window.location.reload();
+    // window.location.reload();
   };
   return (
     <div
@@ -211,7 +211,7 @@ const Languages: FC<LanguagesProps> = () => {
         <div className={"absolute bg-white w-full border "}>
           {languages?.map((lc) => (
             <Link
-              href={"/contact"}
+              href={"/"}
               target={"_blank"}
               translate={"no"}
               className={clsx(
