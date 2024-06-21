@@ -152,6 +152,7 @@ const Languages: FC<LanguagesProps> = () => {
     //@ts-ignore
     new window.google.translate.TranslateElement(
       {
+        pageLanguage: getCookie("googtrans") || "az",
         autoDisplay: false,
         includedLanguages: "ru,en,az", // If you remove it, by default all google supported language will be included
         //@ts-ignore
