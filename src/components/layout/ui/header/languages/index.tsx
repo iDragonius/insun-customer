@@ -171,6 +171,7 @@ const Languages: FC<LanguagesProps> = () => {
     }
     window.location.reload();
   };
+  console.log(getCookie("googtrans"));
   return (
     <div
       className={"relative"}
