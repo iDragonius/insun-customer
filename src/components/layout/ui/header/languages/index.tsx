@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import { FC, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 export interface LanguagesProps {}
 
 const Languages: FC<LanguagesProps> = () => {
@@ -171,8 +172,6 @@ const Languages: FC<LanguagesProps> = () => {
     }
     window.location.reload();
   };
-  // console.log(getCookie("googtrans") === "/auto/az");
-  console.log();
   return (
     <div
       className={"relative"}
@@ -211,7 +210,9 @@ const Languages: FC<LanguagesProps> = () => {
       {isShown && (
         <div className={"absolute bg-white w-full border "}>
           {languages?.map((lc) => (
-            <div
+            <Link
+              href={"/"}
+              target={"_blank"}
               translate={"no"}
               className={clsx(
                 lc.value === selected
@@ -226,7 +227,7 @@ const Languages: FC<LanguagesProps> = () => {
             >
               {lc.icon}
               {lc.label}
-            </div>
+            </Link>
           ))}
         </div>
       )}
