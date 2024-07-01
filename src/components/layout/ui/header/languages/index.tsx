@@ -143,7 +143,7 @@ const Languages: FC<LanguagesProps> = () => {
     if (hasCookie("googtrans")) {
       setSelected(getCookie("googtrans") as string);
     } else {
-      setSelected("/auto/en");
+      setSelected("/auto/az");
     }
     //@ts-ignore
     window.googleTranslateElementInit = googleTranslateElementInit;
