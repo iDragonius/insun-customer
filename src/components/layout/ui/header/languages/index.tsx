@@ -1,7 +1,7 @@
 import { CaretDownIcon } from "@/components/icons";
 import { useOnHoverOutside } from "@/hooks/useOnHoverOutside";
 import clsx from "clsx";
-import { getCookie, hasCookie, setCookie } from "cookies-next";
+import { deleteCookie, getCookie, hasCookie, setCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import { FC, useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -164,9 +164,11 @@ const Languages: FC<LanguagesProps> = () => {
   };
   const langChange = (e: string) => {
     if (hasCookie("googtrans")) {
+      deleteCookie("googtrans");
       setCookie("googtrans", decodeURI(e));
       setSelected(e);
     } else {
+      deleteCookie("googtrans");
       setCookie("googtrans", e);
       setSelected(e);
     }
