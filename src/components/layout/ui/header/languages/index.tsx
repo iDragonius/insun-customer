@@ -18,7 +18,7 @@ const Languages: FC<LanguagesProps> = () => {
   const languages = [
     {
       label: "Az",
-      value: "/az",
+      value: "/auto/az",
       icon: (
         <svg
           width="24"
@@ -51,7 +51,7 @@ const Languages: FC<LanguagesProps> = () => {
     },
     {
       label: "En",
-      value: "/en",
+      value: "/auto/en",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ const Languages: FC<LanguagesProps> = () => {
     },
     {
       label: `Ru`,
-      value: "/ru",
+      value: "/auto/ru",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ const Languages: FC<LanguagesProps> = () => {
     if (hasCookie("googtrans")) {
       setSelected(getCookie("googtrans") as string);
     } else {
-      setSelected("/az");
+      setSelected("/auto/az");
     }
     //@ts-ignore
     window.googleTranslateElementInit = googleTranslateElementInit;
