@@ -18,7 +18,7 @@ const Languages: FC<LanguagesProps> = () => {
   const languages = [
     {
       label: "Az",
-      value: "/auto/az",
+      value: "/az",
       icon: (
         <svg
           width="24"
@@ -51,7 +51,7 @@ const Languages: FC<LanguagesProps> = () => {
     },
     {
       label: "En",
-      value: "/auto/en",
+      value: "/en",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ const Languages: FC<LanguagesProps> = () => {
     },
     {
       label: `Ru`,
-      value: "/auto/ru",
+      value: "/ru",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ const Languages: FC<LanguagesProps> = () => {
     if (hasCookie("googtrans")) {
       setSelected(getCookie("googtrans") as string);
     } else {
-      setSelected("/auto/az");
+      setSelected("/az");
     }
     //@ts-ignore
     window.googleTranslateElementInit = googleTranslateElementInit;
@@ -174,6 +174,8 @@ const Languages: FC<LanguagesProps> = () => {
     }
     // window.location.reload();
   };
+
+  console.log(selected);
   return (
     <div
       className={"relative"}
@@ -190,19 +192,9 @@ const Languages: FC<LanguagesProps> = () => {
       >
         <div className={"flex gap-2 items-center"}>
           <div className={"mt-1"}>
-            {
-              languages.find((el) =>
-                el.value.includes(
-                  (getCookie("googtrans") || "").split("/az")[1],
-                ),
-              )?.icon
-            }
+            {languages.find((el) => el.value === selected)?.icon}
           </div>
-          {
-            languages.find((el) =>
-              el.value.includes((getCookie("googtrans") || "").split("/az")[1]),
-            )?.label
-          }
+          {languages.find((el) => el.value === selected)?.label}
         </div>
 
         <CaretDownIcon
