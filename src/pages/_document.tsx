@@ -32,6 +32,10 @@ fbq('init', '414317877899901');
 fbq('track', 'PageView');`,
           }}
         />
+        <meta
+          name="google-site-verification"
+          content="OOKfW1k9pdpxs8OVYOlwGJEyGQeNj7aHxEK0pMnlXPo"
+        />
       </Head>
       <body>
         <noscript
