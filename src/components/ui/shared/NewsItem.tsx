@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ServerUrl } from "@/constants/server-url";
 import dayjs from "dayjs";
 import Link from "next/link";
-import { imageLoader } from '@/utils/loader'
+import { imageLoader } from "@/utils/loader";
 
 export interface NewsItemProps {
   type: "main" | "sub";
@@ -16,13 +16,14 @@ const NewsItem: FC<NewsItemProps> = ({ type, data }) => {
     return (
       <div>
         <Image
-	loader={imageLoader}
-          src={ data.attributes.thumbnail.data.attributes.url}
+          loader={imageLoader}
+          src={data?.attributes?.thumbnail?.data?.attributes?.url}
           alt={"main"}
           width={752}
           height={500}
           className={"rounded-[12px] mb-10 w-full h-[500px]"}
         />
+
         <div>
           <p className={"text-[#A1A1A1] font-semibold"}>
             {dayjs(data.attributes.date).format("DD.MM.YYYY")}
@@ -48,8 +49,8 @@ const NewsItem: FC<NewsItemProps> = ({ type, data }) => {
     return (
       <Link className={"flex gap-8  "} href={`/news/${data.id}`}>
         <Image
-	loader={imageLoader}
-          src={ data.attributes.thumbnail.data.attributes.url}
+          loader={imageLoader}
+          src={data?.attributes?.thumbnail?.data?.attributes?.url}
           alt={"main"}
           width={300}
           height={200}
