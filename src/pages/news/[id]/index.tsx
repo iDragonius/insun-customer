@@ -82,14 +82,14 @@ const NewsItemPage: FC<NewsItemPageProps> = () => {
               {data?.news.data.attributes.title}
             </h3>
             <div className={"p-6 border  border-[#DADADA] mt-4 rounded-[8px] "}>
-              {data?.news.data.attributes.thumbnail.data && (
+              {data?.news?.data?.attributes?.thumbnail?.data && (
                 <Image
                   loader={imageLoader}
                   src={
-                    data?.news.data.attributes.thumbnail.data.attributes
-                      .url as string
+                    data?.news?.data?.attributes?.thumbnail?.data?.attributes
+                      ?.url as string
                   }
-                  alt={data?.news.data.attributes.title || ""}
+                  alt={data?.news?.data?.attributes?.title || ""}
                   width={600}
                   height={600}
                   className={"  mb-4 object-contain rounded-[6px] mx-auto"}
@@ -150,12 +150,14 @@ const NewsItemPage: FC<NewsItemPageProps> = () => {
                 "grid  grid-cols-1 sm:grid-cols-2 min-[1000px]:grid-cols-3 gap-8 mb-16"
               }
             >
-              {data?.newsP.data.map((newsItem) => (
+              {data?.newsP?.data?.map((newsItem) => (
                 <Link href={`/news/${newsItem.id}`}>
                   <Image
                     loader={imageLoader}
-                    src={newsItem.attributes.thumbnail.data.attributes.url}
-                    alt={newsItem.attributes.thumbnail.data.attributes.name}
+                    src={newsItem?.attributes?.thumbnail?.data?.attributes?.url}
+                    alt={
+                      newsItem?.attributes?.thumbnail?.data?.attributes?.name
+                    }
                     width={416}
                     height={300}
                     className={"mb-6 w-full"}
